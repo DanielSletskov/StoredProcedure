@@ -1,0 +1,18 @@
+USE [ShopDB]
+GO
+/****** Object:  UserDefinedFunction [dbo].[CalculateTotalAmount]    Script Date: 18/09/2024 11.34.05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER FUNCTION [dbo].[CalculateTotalAmount](@customerID int)
+RETURNS decimal
+AS 
+BEGIN
+	Declare @amount Decimal(10,2);
+
+	SELECT @amount = Sum(Amount) 
+	FROM Orders 
+	Where CustomerID = @customerID; 
+	RETURN @amount;	
+END;
