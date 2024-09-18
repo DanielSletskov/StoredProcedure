@@ -1,0 +1,15 @@
+USE [ShopDB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetOrdersByID]    Script Date: 18/09/2024 11.21.38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[GetOrdersByID]
+	@customerId INT
+AS 
+BEGIN
+	SELECT * FROM [ShopDB].[dbo].[Orders]
+	WHERE CustomerID = @customerId
+END;
