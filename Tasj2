@@ -1,0 +1,8 @@
+PROCEDURE [dbo].[GetOrdersByDate]
+	@startDate	DateTime,
+	@endDate	DateTime
+AS
+BEGIN
+	SELECT * FROM [ShopDB].[dbo].[Orders]
+	WHERE OrderDate BETWEEN @startDate AND @endDate
+END;
