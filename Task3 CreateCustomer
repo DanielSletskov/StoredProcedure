@@ -1,0 +1,19 @@
+
+USE [ShopDB]
+GO
+/****** Object:  StoredProcedure [dbo].[CreateCustomer]    Script Date: 18/09/2024 11.30.27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[CreateCustomer]
+	@name	nvarchar(100),
+	@email	nvarchar(100),
+	@registrationDate datetime, 
+	@status nvarchar(50)
+AS
+BEGIN
+	INSERT INTO Customers(Name,Email,RegistrationDate,Status)
+	VALUES (@name, @email, @registrationDate, @status)
+END;
