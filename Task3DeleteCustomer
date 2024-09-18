@@ -1,0 +1,14 @@
+USE [ShopDB]
+GO
+/****** Object:  StoredProcedure [dbo].[DeleteCustomer]    Script Date: 18/09/2024 11.32.58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[DeleteCustomer]
+	@customerID int
+AS
+BEGIN
+	DELETE FROM Customers
+	WHERE CustomerID = @customerID;
+END;
