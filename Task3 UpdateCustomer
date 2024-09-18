@@ -1,0 +1,18 @@
+USE [ShopDB]
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateCustomer]    Script Date: 18/09/2024 11.32.21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[UpdateCustomer]
+	@customerID int,
+	@name nvarchar(100),
+	@email nvarchar(100),
+	@status nvarchar(50)
+AS
+BEGIN
+	UPDATE Customers
+	SET Name = @name, Email = @email, Status = @status
+	WHERE CustomerID = @customerID;
+END;
